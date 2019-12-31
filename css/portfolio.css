@@ -1,0 +1,60 @@
+/* portfolio.html */
+.bg-cover {
+    background-image: url('../images/geisel.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 25%; 
+}
+
+.carousel-control-prev, .carousel-control-next{
+    height: 24px;
+    width: 24px;
+    background-color: lightgray;
+    margin-top: 40%;
+    margin-bottom: 60%;
+}
+
+.card{
+    height: 100%;
+    background-color: #fcfcfc;
+}
+
+.jumbotron .col-sm-4{
+    width: 33%;
+}
+
+#skillsJumbotron{
+    padding-top: 8px;
+    padding-bottom: 2px;
+    /*background-color: #e9ecef;*/
+    background-color: goldenrod;
+}
+
+.jumbotron .row .bg{
+    background: rgb(50, 50, 50); /* Fallback */
+    background: rgba(50, 50, 50, 0.75);
+    color: lightgray;
+}
+
+.nav-link{
+    color: white;
+    text-align: right;
+}
+
+.nav-link{
+    margin-top: 14px;
+    padding-bottom: 0px;
+}
+
+.skillTitle{
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    background: #eaedf0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    width: 512px;
+}
+
+h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
