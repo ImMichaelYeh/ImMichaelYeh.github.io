@@ -1,4 +1,9 @@
 /* portfolio.html */
+
+body {
+    background-color: black;
+}
+
 .bg-cover {
     background-image: url('../images/geisel.jpg');
     background-size: cover;
@@ -14,9 +19,17 @@
     margin-bottom: 60%;
 }
 
+.card-title{
+    color: lightgray;
+}
+
 .card{
     height: 100%;
-    background-color: #fcfcfc;
+    background: rgba(50, 50, 50, 0.75);
+}
+
+#contact-me{
+    background: rgb(33, 37, 41);
 }
 
 .jumbotron .col-sm-4{
@@ -50,7 +63,8 @@
     margin-right: auto;
     margin-left: auto;
     text-align: center;
-    background: #eaedf0;
+    background: rgb(33, 37, 41);
+    color: lightgray;
     font-family: Georgia, 'Times New Roman', Times, serif;
     width: 512px;
 }
