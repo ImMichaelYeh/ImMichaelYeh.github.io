@@ -12,11 +12,13 @@ body {
 }
 
 .carousel-control-prev, .carousel-control-next{
-    height: 24px;
-    width: 24px;
+    height: 32px;
+    width: 32px;
     background-color: lightgray;
-    margin-top: 40%;
+    margin-top: 30%;
     margin-bottom: 60%;
+    margin-left: 16%;
+    margin-right: 16%;
 }
 
 .card-title{
