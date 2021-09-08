@@ -8,7 +8,7 @@ body {
     background-image: url('../images/geisel.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 50% 25%; 
+    background-position: 50%; 
 }
 
 .carousel-control-prev, .carousel-control-next{
@@ -17,8 +17,8 @@ body {
     background-color: lightgray;
     margin-top: 30%;
     margin-bottom: 60%;
-    margin-left: 16%;
-    margin-right: 16%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .card-title{
