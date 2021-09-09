@@ -1,7 +1,7 @@
 /* portfolio.html */
 
 body {
-    background-color: black;
+    background-color: #182B49; /* UCSD navy blue */
 }
 
 .bg-cover {
@@ -30,8 +30,13 @@ body {
     background: rgba(50, 50, 50, 0.10);
 }
 
+.card-small{
+    height: 50%;
+    background: rgba(50, 50, 50, 0.10);
+}
+
 #contact-me{
-    background: rgb(33, 37, 41, 0.1);
+    background: rgb(33, 37, 41, 0.5);
 }
 
 .jumbotron .col-sm-4{
@@ -41,8 +46,7 @@ body {
 #skillsJumbotron{
     padding-top: 1%;
     padding-bottom: 0.75%;
-    /*background-color: #e9ecef;*/
-    background-color: goldenrod;
+    background-color: #C69214; /* UCSD Gold*/
 }
 
 /* Used for About me and Education */
