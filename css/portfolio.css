@@ -27,11 +27,11 @@ body {
 
 .card{
     height: 100%;
-    background: rgba(50, 50, 50, 0.75);
+    background: rgba(50, 50, 50, 0.10);
 }
 
 #contact-me{
-    background: rgb(33, 37, 41);
+    background: rgb(33, 37, 41, 0.1);
 }
 
 .jumbotron .col-sm-4{
@@ -39,36 +39,36 @@ body {
 }
 
 #skillsJumbotron{
-    padding-top: 8px;
-    padding-bottom: 2px;
+    padding-top: 1%;
+    padding-bottom: 0.75%;
     /*background-color: #e9ecef;*/
     background-color: goldenrod;
 }
 
+/* Used for About me and Education */
 .jumbotron .row .bg{
     background: rgb(50, 50, 50); /* Fallback */
-    background: rgba(50, 50, 50, 0.75);
+    background: rgba(50, 50, 50, 0.0);
     color: lightgray;
 }
 
 .nav-link{
     color: white;
     text-align: right;
-}
-
-.nav-link{
-    margin-top: 14px;
-    padding-bottom: 0px;
+    margin-top: 10%;
+    padding-bottom: 0%;
 }
 
 .skillTitle{
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: 1%;
+    margin-top: 1%;
     text-align: center;
-    background: rgb(33, 37, 41);
+    background: rgb(33, 37, 41, 0.4);
     color: lightgray;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    width: 512px;
+    width:50%;
 }
 
 h1{
