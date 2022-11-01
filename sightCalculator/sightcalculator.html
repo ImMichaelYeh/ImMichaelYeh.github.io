@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sight Calculator</title>
+    </head>
+    <body>
+        <img src="math.png" width="50%">
+        <form>
+            <label for="clicksPerTurn">Enter Number of Clicks per Turn:</label>
+            <br>
+            <input type="text" id="clicksPerTurn" name="clickPerTurn">
+            <br><br>
+
+            <label for="sightClickDistance">Enter Sight Click Distance:</label>
+            <br>
+            <input type="text" id="sightClickDistance" name="sightClickDistance">
+            <select name="sightClickUnits" id="sightClickUnits">
+                <option value="mm">cm</option>
+                <option value="in">in</option>
+            </select>
+            <br><br>
+
+            <label for="distCenter">Enter Distance from Center of Group to Center of Target:</label>
+            <br>
+            <input type="text" id="distCenter" name="distCenter">
+            <select name="distCenterUnits" id="distCenterUnits">
+                <option value="cm">cm</option>
+                <option value="in">in</option>
+            </select>
+            <br><br>
+
+            <label for="distEyeToSight">Enter Distance from Eye to Sight:</label>
+            <br>
+            <input type="text" id="distEyeToSight" name="distEyeToSight">
+            <select name="distEyeToSightUnits" id="distEyeToSightUnits">
+                <option value="cm">cm</option>
+                <option value="in">in</option>
+            </select>
+            <br><br>
+
+            <label for="distTarget">Enter Distance from Archer to Target:</label>
+            <br>
+            <input type="text" id="distTarget" name="distTarget">
+            <select name="distTargetUnits" id="distTargetUnits">
+                <option value="m">m</option>
+                <option value="yd">yd</option>
+            </select>
+            <br><br>
+
+            <input type="submit" value="Calculate" onclick="calculate()">
+        </form>
+        <script src="javascript/SightCalculator.js"> </script>
+    </body>
+</html>
