@@ -34,7 +34,7 @@ function calculate() {
     if (!document.getElementById("elevationUnitsMillimeters").checked) {
         elevationClick *= 25.4;
     }
-    console.log(`elevationClick: ${elevationClick}mm`)
+    console.log(`elevationClick: ${elevationClick}mm`);
 
     if (!document.getElementById("windageUnitsMillimeters").checked) {
         windageClick *= 25.4;
@@ -43,12 +43,12 @@ function calculate() {
     
     // Convert shooting info input into mm
     if (document.getElementById("shootingDistanceUnitsMeters").checked) {
-        shootingDistance *= 1000
+        shootingDistance *= 1000;
     }
     else {
         shootingDistance *= 914.4;
     }
-    console.log(`shootingDistance: ${shootingDistance}mm`)
+    console.log(`shootingDistance: ${shootingDistance}mm`);
 
     if (document.getElementById("eyeToSightDistanceUnitsCentimeters").checked) {
         eyeToSightDistance *= 10;
@@ -56,7 +56,7 @@ function calculate() {
     else {
         eyeToSightDistance *= 25.4;
     }
-    console.log(`eyeToSightDistance: ${eyeToSightDistance}mm`)
+    console.log(`eyeToSightDistance: ${eyeToSightDistance}mm`);
 
     // Convert sight settings input into mm
     if (document.getElementById("arrowElevationUnitsCentimeters").checked) {
@@ -65,7 +65,7 @@ function calculate() {
     else {
         arrowElevationFromCenter *= 25.4;
     }
-    console.log(`arrowElevationFromCenter: ${arrowElevationFromCenter}mm`)
+    console.log(`arrowElevationFromCenter: ${arrowElevationFromCenter}mm`);
 
     if (document.getElementById("arrowWindageUnitsCentimeters").checked) {
         arrowWindageFromCenter *= 10;    
@@ -73,7 +73,7 @@ function calculate() {
     else {
         arrowWindageFromCenter *= 25.4;
     }
-    console.log(`arrowWindageFromCenter: ${arrowWindageFromCenter}mm`)
+    console.log(`arrowWindageFromCenter: ${arrowWindageFromCenter}mm`);
 
     // Calculations
     let sightElevationAngle = Math.atan(arrowElevationFromCenter/shootingDistance);
@@ -93,18 +93,20 @@ function calculate() {
 
     let elevationOutput = "";
     if (calculatedElevationClicks > 0) {
-        elevationOutput = `You need to move your sight up ${calculatedElevationClicks} clicks.\n`
+        elevationOutput = `You need to move your sight up ${calculatedElevationClicks} clicks.\n`;
     }
     else if (calculatedElevationClicks < 0) {
-        elevationOutput = `You need to move your sight down ${calculatedElevationClicks*-1} clicks.\n`
+        elevationOutput = `You need to move your sight down ${calculatedElevationClicks*-1} clicks.\n`;
+        elevationOutput *= -1;
     }
 
     let windageOutput = "";
     if (calculatedWindageClicks > 0) {
-        windageOutput += `You need to move your sight right ${calculatedElevationClicks} clicks.\n`
+        windageOutput += `You need to move your sight right ${calculatedWindageClicks} clicks.\n`;
     }
     else if (calculatedWindageClicks < 0) {
-        windageOutput += `You need to move your sight left ${calculatedElevationClicks*-1} clicks.\n`
+        windageOutput += `You need to move your sight left ${calculatedWindageClicks*-1} clicks.\n`;
+        windageOutput *= -1;
     }
     
     document.getElementById("elevationResultText").innerHTML = elevationOutput;
