@@ -1,4 +1,4 @@
-
+document.getElementById("footerYear").textContent = new Date().getFullYear();
 
 function calculate() {
     console.log("INPUT:");
@@ -89,24 +89,26 @@ function calculate() {
     let calculatedElevationClicks = sightElevationChange / elevationClick;
     let calculatedWindageClicks = sightWindageChange / windageClick;
     calculatedElevationClicks = Math.round(calculatedElevationClicks);
+    console.log(`calculatedElevationClicks: ${calculatedElevationClicks}`);
     calculatedWindageClicks = Math.round(calculatedWindageClicks);
+    console.log(`calculatedWindageClicks: ${calculatedWindageClicks}`);
 
     let elevationOutput = "";
     if (calculatedElevationClicks > 0) {
-        elevationOutput = `You need to move your sight up ${calculatedElevationClicks} clicks.\n`;
+        elevationOutput = `You need to move your sight UP ${calculatedElevationClicks} clicks.\n`;
     }
     else if (calculatedElevationClicks < 0) {
         calculatedElevationClicks *= -1
-        elevationOutput = `You need to move your sight down ${calculatedElevationClicks} clicks.\n`;
+        elevationOutput = `You need to move your sight DOWN ${calculatedElevationClicks} clicks.\n`;
     }
 
     let windageOutput = "";
     if (calculatedWindageClicks > 0) {
-        windageOutput += `You need to move your sight right ${calculatedWindageClicks} clicks.\n`;
+        windageOutput += `You need to move your sight RIGHT ${calculatedWindageClicks} clicks.\n`;
     }
     else if (calculatedWindageClicks < 0) {
         calculatedWindageClicks *= -1
-        windageOutput += `You need to move your sight left ${calculatedWindageClicks} clicks.\n`;
+        windageOutput += `You need to move your sight LEFT ${calculatedWindageClicks} clicks.\n`;
     }
     
     document.getElementById("elevationResultText").innerHTML = elevationOutput;
