@@ -77,13 +77,17 @@ function calculate() {
 
     // Calculations
     let sightElevationAngle = Math.atan(arrowElevationFromCenter/shootingDistance);
+    console.log(`sightElevationAngle: ${sightElevationAngle}`);
     let sightWindageAngle = Math.atan(arrowWindageFromCenter/shootingDistance);
+    console.log(`sightWindageAngle: ${sightWindageAngle}`);
 
     let sightElevationChange = Math.tan(sightElevationAngle) * eyeToSightDistance;
+    console.log(`sightElevationChange: ${sightElevationChange}`);
     let sightWindageChange = Math.tan(sightWindageAngle) * eyeToSightDistance;
+    console.log(`sightWindageChange: ${sightWindageChange}`);
 
-    let calculatedElevationClicks = sightElevationChange * elevationClick;
-    let calculatedWindageClicks = sightWindageChange * windageClick;
+    let calculatedElevationClicks = sightElevationChange / elevationClick;
+    let calculatedWindageClicks = sightWindageChange / windageClick;
     calculatedElevationClicks = Math.round(calculatedElevationClicks);
     calculatedWindageClicks = Math.round(calculatedWindageClicks);
 
