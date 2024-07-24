@@ -96,8 +96,8 @@ function calculate() {
         elevationOutput = `You need to move your sight up ${calculatedElevationClicks} clicks.\n`;
     }
     else if (calculatedElevationClicks < 0) {
-        elevationOutput = `You need to move your sight down ${calculatedElevationClicks*-1} clicks.\n`;
-        elevationOutput *= -1;
+        calculatedElevationClicks *= -1
+        elevationOutput = `You need to move your sight down ${calculatedElevationClicks} clicks.\n`;
     }
 
     let windageOutput = "";
@@ -105,8 +105,8 @@ function calculate() {
         windageOutput += `You need to move your sight right ${calculatedWindageClicks} clicks.\n`;
     }
     else if (calculatedWindageClicks < 0) {
-        windageOutput += `You need to move your sight left ${calculatedWindageClicks*-1} clicks.\n`;
-        windageOutput *= -1;
+        calculatedWindageClicks *= -1
+        windageOutput += `You need to move your sight left ${calculatedWindageClicks} clicks.\n`;
     }
     
     document.getElementById("elevationResultText").innerHTML = elevationOutput;
