@@ -1,7 +1,131 @@
-/* General */
+/* styles.css */
+
+/* General Styles */
+body {
+    background-color: #182B49; /* UCSD navy blue */
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 1%;
+}
+
 .center {
     margin-left: auto;
     margin-right: auto;
     float: none;
 }
 
+/* Navbar Styles */
+.navbar {
+    background-color: transparent;
+}
+
+.navbar-brand h1 {
+    color: white;
+    font-size: 36px;
+}
+
+.nav-link {
+    color: white;
+    text-align: right;
+    margin-top: 10%;
+    padding-bottom: 0%;
+}
+
+/* Jumbotron Styles */
+.jumbotron {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    border-radius: 0.3rem;
+}
+
+.jumbotron .bg {
+    background: rgba(50, 50, 50, 0.0);
+    color: lightgray;
+}
+
+.bg-cover {
+    background-image: url('../images/geisel.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%; 
+}
+
+.jumbotron .col-sm-4 {
+    width: 33%;
+}
+
+#skillsJumbotron {
+    padding-top: 1%;
+    padding-bottom: 0.75%;
+    background-color: #C69214; /* UCSD Gold */
+}
+
+/* Card Styles */
+.card {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: rgba(50, 50, 50, 0.10);
+    height: 100%;
+}
+
+.card-small {
+    height: 50%;
+    background: rgba(50, 50, 50, 0.10);
+}
+
+.card-title {
+    color: lightgray;
+}
+
+/* Skills Section */
+.skillTitle {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    text-align: center;
+    background: rgba(33, 37, 41, 0.4);
+    color: lightgray;
+    width: 66%;
+}
+
+/* Contact Me Section */
+#contact-me {
+    background: rgba(33, 37, 41, 0.5);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#contact-me h1 {
+    color: goldenrod;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    color: gainsboro;
+    padding: 10px 0;
+}
+
+footer a {
+    color: goldenrod;
+}
+
+/* Responsive Images */
+.wrapper img {
+    width: 100%;
+}
+
+/* Carousel Controls */
+.carousel-control-prev, .carousel-control-next {
+    height: 32px;
+    width: 32px;
+    background-color: lightgray;
+    margin-top: 30%;
+    margin-bottom: 60%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
