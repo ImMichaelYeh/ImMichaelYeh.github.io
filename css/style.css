@@ -129,3 +129,67 @@ footer a {
     margin-left: 5%;
     margin-right: 5%;
 }
+
+/* Additional Styles */
+.about-me, .education {
+    padding-top: 0.5%;
+    background: rgba(24, 43, 73, 0.75);
+}
+
+.about-me h2, .education h2 {
+    color: goldenrod;
+}
+
+.about-me img, .education img {
+    width: 50%;
+    border-radius: 50%;
+}
+
+.work-experience h1, .personal-projects h1, .skills h1 {
+    color: white;
+}
+
+.work-experience .card, .personal-projects .card {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.personal-projects .card h1 {
+    color: #C69214;
+    margin-top: 2%;
+    font-size: 3vw;
+}
+
+.personal-projects .card img {
+    width: 85%;
+    padding-top: 15px;
+}
+
+.personal-projects .card .btn {
+    background-color: goldenrod;
+}
+
+.skills .card img {
+    width: 33%;
+    padding-top: 5%;
+}
+
+.skills .card-title {
+    text-align: center;
+}
+
+.contact-me h1 {
+    color: goldenrod;
+}
+
+.contact-me a {
+    color: goldenrod;
+}
+
+.contact-me .btn {
+    background-color: goldenrod;
+}
+
+.footer {
+    color: gainsboro;
+}
