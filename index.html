@@ -36,7 +36,7 @@
 
             <!-- MAKE SURE UPDATES ARE CONSISTENT ACROSS PAGES-->
             <li class="nav-item">
-                <a class="nav-link" href="files/resume.pdf" target="_blank">
+                <a class="nav-link" id="resumeLinkNav" href="files/resume.pdf" target="_blank">
                     RESUME
                 </a>
             </li>
@@ -494,7 +494,8 @@
                     Primary Email: <a href="mailto:myeh2k@yahoo.com" style="color: goldenrod">myeh2k@yahoo.com</a><br>
                     Personal Number: (858) 335-6126
                 </p>
-                <a href="files/resume.pdf" target="_blank" class="btn" style="background-color: goldenrod;"
+                <a href="files/resume.pdf" target="_blank" class="btn" id="resumeLinkButton"
+                    style="background-color: goldenrod;"
                     role="button">
                     See Full Resume
                 </a>
@@ -518,6 +519,157 @@
     <!-- SET FOOTER YEAR -->
     <script>
         document.getElementById("footerYear").textContent = new Date().getFullYear();
+    </script>
+    <script>
+        (function () {
+            var repoOwner = "ImMichaelYeh";
+            var repoName = "ImMichaelYeh.github.io";
+            var apiUrl = "https://api.github.com/repos/" + repoOwner + "/" + repoName + "/contents/resumes";
+            var navLink = document.getElementById("resumeLinkNav");
+            var buttonLink = document.getElementById("resumeLinkButton");
+            var fallbackHref = "resumes/";
+
+            if (!navLink || !buttonLink) {
+                return;
+            }
+
+            function isResumePdf(item) {
+                return item && item.type === "file" && typeof item.name === "string" &&
+                    /\.pdf$/i.test(item.name);
+            }
+
+            function parseResumeName(name) {
+                var match = /^resume-(\d{8})(?:-(\d+))?\.pdf$/i.exec(name);
+                if (!match) {
+                    return null;
+                }
+                return {
+                    date: Number(match[1]),
+                    sequence: match[2] ? Number(match[2]) : 0
+                };
+            }
+
+            function pickLatestResume(items) {
+                var latest = null;
+                for (var i = 0; i < items.length; i++) {
+                    var item = items[i];
+                    if (!isResumePdf(item)) {
+                        continue;
+                    }
+                    var parsed = parseResumeName(item.name);
+                    if (!parsed) {
+                        if (!latest) {
+                            latest = { item: item, parsed: { date: 0, sequence: 0 } };
+                        }
+                        continue;
+                    }
+                    if (!latest ||
+                        parsed.date > latest.parsed.date ||
+                        (parsed.date === latest.parsed.date && parsed.sequence > latest.parsed.sequence)) {
+                        latest = { item: item, parsed: parsed };
+                    }
+                }
+                return latest ? latest.item : null;
+            }
+
+            function setHref(href) {
+                navLink.href = href;
+                buttonLink.href = href;
+            }
+
+            function fetchFromGitHub() {
+                return fetch(apiUrl, { cache: "no-store" })
+                    .then(function (response) {
+                        if (!response.ok) {
+                            throw new Error("Failed to fetch resume list");
+                        }
+                        return response.json();
+                    })
+                    .then(function (items) {
+                        var latest = pickLatestResume(items);
+                        if (latest && latest.download_url) {
+                            setHref(latest.download_url);
+                            return true;
+                        }
+                        return false;
+                    });
+            }
+
+            function fetchFromLocalListing() {
+                return fetch("resumes/", { cache: "no-store" })
+                    .then(function (response) {
+                        if (!response.ok) {
+                            throw new Error("Failed to fetch local resume listing");
+                        }
+                        return response.text();
+                    })
+                    .then(function (html) {
+                        var parser = new DOMParser();
+                        var doc = parser.parseFromString(html, "text/html");
+                        var links = doc.querySelectorAll("a[href]");
+                        var items = [];
+                        for (var i = 0; i < links.length; i++) {
+                            var href = links[i].getAttribute("href");
+                            if (!href || href.indexOf(".pdf") === -1) {
+                                continue;
+                            }
+                            var name = href.split("/").pop();
+                            name = decodeURIComponent(name);
+                            items.push({ name: name, type: "file" });
+                        }
+                        var latest = pickLatestResume(items);
+                        if (latest && latest.name) {
+                            setHref("resumes/" + latest.name);
+                            return true;
+                        }
+                        return false;
+                    });
+            }
+
+            if (window.location.protocol === "file:") {
+                setHref(fallbackHref);
+                return;
+            }
+
+            var isLocalhost = window.location.hostname === "localhost" ||
+                window.location.hostname === "127.0.0.1";
+
+            if (isLocalhost) {
+                fetchFromLocalListing()
+                    .then(function (handled) {
+                        if (!handled) {
+                            return fetchFromGitHub();
+                        }
+                        return true;
+                    })
+                    .then(function (handled) {
+                        if (!handled) {
+                            setHref(fallbackHref);
+                        }
+                    })
+                    .catch(function () {
+                        fetchFromGitHub()
+                            .then(function (handled) {
+                                if (!handled) {
+                                    setHref(fallbackHref);
+                                }
+                            })
+                            .catch(function () {
+                                setHref(fallbackHref);
+                            });
+                    });
+            } else {
+                fetchFromGitHub()
+                    .then(function (handled) {
+                        if (!handled) {
+                            setHref(fallbackHref);
+                        }
+                    })
+                    .catch(function () {
+                        setHref(fallbackHref);
+                    });
+            }
+        })();
     </script>
 </body>
 
