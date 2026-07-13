@@ -295,33 +295,6 @@
     <script>
         document.getElementById("footerYear").textContent = new Date().getFullYear();
 
-        const projectsMenuButton = document.getElementById("projectsMenuButton");
-        const projectsMenu = document.getElementById("projectsMenu");
-
-        if (projectsMenuButton && projectsMenu) {
-            function closeProjectsMenu() {
-                projectsMenu.classList.remove("is-open");
-                projectsMenuButton.setAttribute("aria-expanded", "false");
-            }
-
-        projectsMenuButton.addEventListener("click", () => {
-            const isOpen = projectsMenu.classList.toggle("is-open");
-            projectsMenuButton.setAttribute("aria-expanded", String(isOpen));
-        });
-
-        document.addEventListener("click", (event) => {
-            if (!event.target.closest(".projects-menu")) {
-                closeProjectsMenu();
-            }
-        });
-
-            document.addEventListener("keydown", (event) => {
-                if (event.key === "Escape") {
-                    closeProjectsMenu();
-                    projectsMenuButton.focus();
-                }
-            });
-        }
     </script>
 </body>
 </html>
