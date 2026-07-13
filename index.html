@@ -19,9 +19,9 @@
                 <details class="projects-menu">
                     <summary class="nav-link">Projects</summary>
                     <div class="projects-dropdown">
-                        <a href="https://immichaelyeh.github.io/mybudgeter/">MyBudgeter</a>
-                        <a href="https://immichaelyeh.github.io/sightCalculator/">Target Archery Sight Calculator</a>
-                        <a href="https://immichaelyeh.github.io/MySweeperOnline/">MySweeperOnline</a>
+                        <a href="https://immichaelyeh.github.io/mybudgeter/" target="_blank" rel="noopener">MyBudgeter</a>
+                        <a href="https://immichaelyeh.github.io/sightCalculator/" target="_blank" rel="noopener">Target Archery Sight Calculator</a>
+                        <a href="https://immichaelyeh.github.io/MySweeperOnline/" target="_blank" rel="noopener">MySweeperOnline</a>
                     </div>
                 </details>
             </div>
@@ -287,6 +287,12 @@
     <script>
         document.getElementById("footerYear").textContent = new Date().getFullYear();
 
+        const projectsMenu = document.querySelector(".projects-menu");
+        document.addEventListener("click", (event) => {
+            if (projectsMenu.open && !projectsMenu.contains(event.target)) {
+                projectsMenu.open = false;
+            }
+        });
     </script>
 </body>
 </html>
