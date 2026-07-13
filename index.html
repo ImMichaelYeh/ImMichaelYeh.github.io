@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Michael's Portfolio</title>
+    <meta name="description" content="Portfolio and résumé for Michael Yeh, software engineer.">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="navbar navbar-expand-sm navbar-dark site-nav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="navbar-brand" href="index.html">
+                        <h1>Michael Yeh</h1>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html" aria-current="page">PORTFOLIO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="resumes/resume.pdf" target="_blank" rel="noopener">RESUME</a>
+                </li>
+                <li class="nav-item projects-menu">
+                    <button class="nav-link projects-toggle" id="projectsMenuButton" type="button"
+                        aria-expanded="false" aria-controls="projectsMenu">
+                        PROJECTS
+                    </button>
+                    <div class="projects-dropdown" id="projectsMenu" role="menu" aria-labelledby="projectsMenuButton">
+                        <a href="https://immichaelyeh.github.io/mybudgeter/" target="_blank" rel="noopener" role="menuitem">
+                            MyBudgeter
+                        </a>
+                        <a href="https://immichaelyeh.github.io/sightCalculator/" target="_blank" rel="noopener" role="menuitem">
+                            Sight Calculator
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="site-content">
+        <section class="hero">
+            <div class="row intro-row">
+                <article class="col-lg-7 hero-panel intro-panel">
+                    <img class="profile-image" src="images/profile.jpg" width="50%" alt="Michael Yeh">
+                    <div class="hero-copy">
+                        <p class="eyebrow">Software Engineer</p>
+                        <h1>Hi, I'm Michael Yeh.</h1>
+                        <p class="hero-summary">
+                        I'm a software engineer experienced with building backend systems and serverless infrastructure on AWS.
+                        </p>
+                        <a class="btn button-gold hero-button" href="resumes/resume.pdf" target="_blank" rel="noopener">
+                            View resume
+                        </a>
+                    </div>
+                </article>
+                <article class="col-lg-5 education-panel intro-panel">
+                    <p class="eyebrow">Education</p>
+                    <img src="images/ucsd.png" width="50%" alt="University of California San Diego">
+                    <h2>Bachelor of Science</h2>
+                    <p class="education-detail">
+                        Mathematics - Computer Science<br>
+                        Graduated June 10th, 2022
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="content-section" aria-labelledby="experience-title">
+            <header class="section-heading">
+                <p class="eyebrow">Experience</p>
+                <h2 id="experience-title">Work Experience</h2>
+            </header>
+            <div class="row work-experience">
+                <div class="col-12 mx-auto work-card">
+                    <article class="card mx-auto">
+                        <div class="row experience-row">
+                            <div class="col-md-10 experience-details">
+                                <h3 class="card-title experience-title">
+                                    <b class="text-gold">Optum (UnitedHealth Group)</b>, Software Engineer
+                                </h3>
+                                <ul class="experience-list">
+                                    <li>Reduced AWS Cloud costs by $200K+ annually by eliminating redundant API calls and implementing caching across backend services.</li>
+                                    <li>Delivered mobile notifications to 1M+ members by designing a multi-threaded, high-throughput messaging system with cross-team coordination.</li>
+                                    <li>Remediated healthcare regulatory compliance risks by identifying critical security vulnerabilities and leading remediation across multiple backend services.</li>
+                                    <li>Accelerated early-stage development, reducing overall feature delivery time, by designing an AI-assisted workflow that transforms multimodal product requirements into structured implementation plans for AI coding tools.</li>
+                                    <li>Saved 40+ engineering hours weekly by designing and building an internal support tool for operation teams to diagnose and resolve problems without engineering team intervention.</li>
+                                    <li>Delivered automated onboarding system capable of processing 10M+ new clients before peak enrollment season by building a high-throughput, event-driven eligibility processing platform integrating legacy healthcare services.</li>
+                                    <li>Ensured 100% successful release for peak season enrollment by serving as the lead engineer, coordinating cross-team testing and defect resolution.</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-2 experience-meta">
+                                <p class="text-gold meta-date">2022 - Present</p>
+                                <p>San Diego, CA</p>
+                                <p>(Remote)</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-12 mx-auto work-card work-card-spaced">
+                    <article class="card mx-auto">
+                        <div class="row experience-row">
+                            <div class="col-md-10 experience-details">
+                                <h3 class="card-title experience-title">
+                                    <b class="text-gold">Cubic Corporation</b>, Software Engineering Intern
+                                </h3>
+                                <ul class="experience-list">
+                                    <li>Reduced manual testing effort by 100+ hours per month by designing and implementing a REST API testing harness with simulated data in Postgres.</li>
+                                    <li>Resolved 500+ defects across application code and automated test suites, improving build stability and test reliability.</li>
+                                    <li>Presented internship onboarding improvement recommendations to senior leadership, influencing future improvements to the program.</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-2 experience-meta">
+                                <p class="text-gold meta-date">2021</p>
+                                <p>San Diego, CA</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section projects-section" aria-labelledby="projects-title">
+            <header class="section-heading">
+                <p class="eyebrow">Selected work</p>
+                <h2 id="projects-title">Projects</h2>
+            </header>
+            <div class="project-grid">
+                <article class="project-card">
+                    <div class="project-card-header">
+                        <p class="project-type">Personal finance</p>
+                        <h3>MyBudgeter</h3>
+                    </div>
+                    <p>
+                        A browser-based budgeting board for tracking income, recurring expenses, savings, and monthly targets in one place.
+                    </p>
+                    <ul>
+                        <li>Normalizes different income and expense frequencies into monthly totals.</li>
+                        <li>Supports drag-and-drop categories, item groups, notes, and budget summaries.</li>
+                        <li>Persists data in the browser with JSON backup and restore.</li>
+                    </ul>
+                    <p class="project-stack">Vanilla JavaScript · Local storage · Node test runner</p>
+                    <div class="project-links">
+                        <a class="btn button-gold" href="https://immichaelyeh.github.io/mybudgeter/" target="_blank" rel="noopener">
+                            Live Demo
+                        </a>
+                        <a class="button-outline" href="https://github.com/ImMichaelYeh/mybudgeter" target="_blank" rel="noopener">
+                            Source Code
+                        </a>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-card-header">
+                        <p class="project-type">Archery utility</p>
+                        <h3>Target Archery Sight Calculator</h3>
+                    </div>
+                    <p>
+                        A browser calculator that converts an arrow group's target offset into elevation and windage sight-click adjustments.
+                    </p>
+                    <ul>
+                        <li>Converts user-selected imperial and metric inputs to millimeters for calculation.</li>
+                        <li>Returns rounded, directional adjustments for both elevation and windage.</li>
+                        <li>Autosaves inputs locally and supports JSON backup and restore.</li>
+                    </ul>
+                    <p class="project-stack">Vanilla JavaScript · Unit conversion · Local storage</p>
+                    <div class="project-links">
+                        <a class="btn button-gold" href="https://immichaelyeh.github.io/sightCalculator/" target="_blank" rel="noopener">
+                            Live Demo
+                        </a>
+                        <a class="button-outline" href="https://github.com/ImMichaelYeh/sightCalculator" target="_blank" rel="noopener">
+                            Source Code
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="content-section skills-section" aria-labelledby="skills-title">
+            <header class="section-heading">
+                <p class="eyebrow">Technical toolkit</p>
+                <h2 id="skills-title">Skills</h2>
+            </header>
+            <h3 class="skills-subheading">Programming Languages</h3>
+            <div class="row skills-row skills-row-first">
+                <div class="col-3">
+                    <article class="card center skill-card">
+                        <img src="images/C.png" width="33%" class="mx-auto skill-image" alt="C">
+                        <div class="card-body">
+                            <h4 class="card-title text-center">C</h4>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-3">
+                    <article class="card center skill-card">
+                        <img src="images/Cpp.png" width="33%" class="mx-auto skill-image" alt="C++">
+                        <div class="card-body">
+                            <h4 class="card-title text-center">C++</h4>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-3">
+                    <article class="card center skill-card">
+                        <img src="images/CSharp.png" width="33%" class="mx-auto skill-image" alt="C#">
+                        <div class="card-body">
+                            <h4 class="card-title text-center">C#</h4>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-3">
+                    <article class="card center skill-card">
+                        <img src="images/Go.png" width="33%" class="mx-auto skill-image" alt="Go">
+                        <div class="card-body">
+                            <h4 class="card-title text-center">Go</h4>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <div class="row skills-row skills-row-spaced">
+                <div class="col-3">
+                    <article class="card center skill-card">
+                        <img src="images/java.png" width="33%" class="mx-auto skill-image" alt="Java">
+                        <div class="card-body">
+                            <h4 class="card-title text-center">Java</h4>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-3">
+                    <article class="card center skill-card">
+                        <img src="images/Python.png" width="33%" class="mx-auto skill-image" alt="Python">
+                        <div class="card-body">
+                            <h4 class="card-title text-center">Python</h4>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-3">
+                    <article class="card center skill-card">
+                        <img src="images/Rust.png" width="33%" class="mx-auto skill-image" alt="Rust">
+                        <div class="card-body">
+                            <h4 class="card-title text-center">Rust</h4>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-3">
+                    <article class="card center skill-card">
+                        <img src="images/TypeScript.png" width="33%" class="mx-auto skill-image" alt="TypeScript">
+                        <div class="card-body">
+                            <h4 class="card-title text-center">TypeScript</h4>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <div class="skills-groups">
+                <article>
+                    <h3>Cloud / Infrastructure</h3>
+                    <p>AWS Lambda, API Gateway, S3, SQS, Step Functions, CDK, Glue</p>
+                </article>
+                <article>
+                    <h3>Databases</h3>
+                    <p>DynamoDB, Postgres, Redshift</p>
+                </article>
+                <article>
+                    <h3>Tools</h3>
+                    <p>Datadog, Git, GitHub, GitHub Actions, LaunchDarkly</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <section id="contact-me">
+            <p class="eyebrow">Get in touch</p>
+            <h2>Contact Me</h2>
+            <div class="container text-center contact-details">
+                <p>
+                    Primary Email: <a href="mailto:immichaelyeh@gmail.com">immichaelyeh@gmail.com</a><br>
+                    GitHub: <a href="https://github.com/ImMichaelYeh" target="_blank" rel="noopener">ImMichaelYeh</a>
+                </p>
+                <a href="resumes/resume.pdf" target="_blank" rel="noopener" class="btn button-gold" role="button">
+                    See Full Resume
+                </a>
+            </div>
+        </section>
+        <nav class="navbar navbar-transparent bg-transparent">
+            <div class="small">
+                Michael Yeh &copy; <span id="footerYear">2222</span>
+            </div>
+        </nav>
+    </footer>
+
+    <script>
+        document.getElementById("footerYear").textContent = new Date().getFullYear();
+
+        const projectsMenuButton = document.getElementById("projectsMenuButton");
+        const projectsMenu = document.getElementById("projectsMenu");
+
+        function closeProjectsMenu() {
+            projectsMenu.classList.remove("is-open");
+            projectsMenuButton.setAttribute("aria-expanded", "false");
+        }
+
+        projectsMenuButton.addEventListener("click", () => {
+            const isOpen = projectsMenu.classList.toggle("is-open");
+            projectsMenuButton.setAttribute("aria-expanded", String(isOpen));
+        });
+
+        document.addEventListener("click", (event) => {
+            if (!event.target.closest(".projects-menu")) {
+                closeProjectsMenu();
+            }
+        });
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") {
+                closeProjectsMenu();
+                projectsMenuButton.focus();
+            }
+        });
+    </script>
+</body>
+</html>
