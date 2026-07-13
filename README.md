@@ -9,7 +9,7 @@ Personal portfolio website for Michael Yeh, a software engineer focused on backe
 - Work experience at Optum and Cubic Corporation
 - Education, technical skills, contact details, and downloadable résumé
 - Links to selected projects:
-  - [MyBudgeter](https://immichaelyeh.github.io/mybudgeter/)
+  - [MyBudgeter](https://immichaelyeh.github.io/MyBudgeter/)
   - [MySweeperOnline](https://immichaelyeh.github.io/MySweeperOnline/)
   - [Target Archery Sight Calculator](https://immichaelyeh.github.io/sightCalculator/)
 

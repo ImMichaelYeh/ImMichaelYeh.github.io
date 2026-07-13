@@ -11,7 +11,8 @@
     --surface-muted: #0b2945;
     --border: #2d5877;
     --shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
-    --content-width: 1600px;
+    --content-width: 1780px;
+    --site-brand-offset: max(2rem, calc((100vw - 1600px) / 2 + 2rem));
 }
 
 /* Base */
@@ -42,14 +43,61 @@ a {
 }
 
 .site-nav {
-    width: min(var(--content-width), 100%);
-    margin: 0 auto;
-    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 72px;
+    width: 100%;
+    margin: 0;
+    padding: 1rem var(--site-brand-offset);
     background: transparent;
 }
 
-.navbar-brand {
+.site-brand {
     margin-right: 1.75rem;
+    color: white;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: normal;
+    text-decoration: none;
+}
+
+.portfolio-links { display: flex; flex-wrap: wrap; }
+.portfolio-links .nav-link,
+.portfolio-links .projects-menu summary {
+    padding: .35rem .9rem;
+}
+.projects-menu summary { list-style: none; cursor: pointer; }
+.projects-menu summary::-webkit-details-marker { display: none; }
+.projects-menu summary::after {
+    display: inline-block;
+    margin-left: .45rem;
+    content: "▾";
+    transition: transform 160ms ease;
+}
+.projects-menu[open] summary::after { transform: rotate(180deg); }
+.projects-menu[open] .projects-dropdown { display: grid; }
+
+.site-nav .navbar-brand {
+    margin-right: 1.75rem;
+    padding: 0;
+    color: #fff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.65rem, 3.3vw, 2.2rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: normal;
+    transform: translateX(2px);
+}
+
+.site-nav .navbar-brand h1 {
+    margin: 0;
+    color: inherit;
+    font: inherit;
+    letter-spacing: inherit;
+    line-height: inherit;
 }
 
 .site-nav .navbar-nav,
@@ -57,17 +105,14 @@ a {
     align-items: center;
 }
 
-.site-nav .nav-item {
-    display: flex;
+.site-nav .navbar-nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
-.navbar-brand h1 {
-    margin: 0;
-    color: white;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(1.5rem, 3vw, 2rem);
-    font-weight: 700;
-    letter-spacing: -0.03em;
+.site-nav .nav-item {
+    display: flex;
 }
 
 .nav-link {
@@ -148,7 +193,7 @@ a {
 
 /* Hero */
 .hero {
-    padding: clamp(3rem, 7vw, 6rem) 2rem;
+    padding: 1.5rem 2rem 2rem;
     color: white;
     background:
         linear-gradient(90deg, rgba(7, 28, 53, 0.96), rgba(7, 28, 53, 0.75)),
@@ -157,7 +202,13 @@ a {
 
 .intro-row,
 .work-experience,
-.skills-row {
+.skills-row,
+.impact-grid,
+.section-heading,
+.project-grid,
+.skills-subheading,
+.skills-grid,
+#contact-me {
     width: min(var(--content-width), 100%);
     margin-right: auto;
     margin-left: auto;
@@ -185,6 +236,7 @@ a {
     border: 4px solid var(--gold);
     border-radius: 50%;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.24);
+    transform: translateY(-3rem);
 }
 
 .hero-copy h1,
@@ -311,8 +363,9 @@ a {
 
 /* Content sections */
 .content-section {
-    padding: clamp(3.5rem, 7vw, 6rem) 2rem 0;
+    padding: 2rem 2rem 0;
 }
+.site-content > .content-section:first-of-type { padding-top: 0; }
 
 .section-heading {
     width: min(var(--content-width), 100%);
@@ -332,6 +385,7 @@ a {
 .work-card {
     margin-bottom: 1.5rem;
 }
+.work-card:last-child { margin-bottom: 0; }
 
 .work-card-spaced {
     margin-top: 0;
@@ -489,7 +543,8 @@ a {
 
 /* Skills */
 .skills-section {
-    padding-bottom: clamp(3.5rem, 7vw, 6rem);
+    padding-top: 2.5rem;
+    padding-bottom: 0;
 }
 
 .skills-row {
@@ -545,7 +600,7 @@ a {
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     width: min(var(--content-width), 100%);
-    margin: 2rem auto 0;
+    margin: 2rem auto;
 }
 
 .skills-groups article {
@@ -578,11 +633,11 @@ footer {
 #contact-me {
     width: min(var(--content-width), 100%);
     margin: 0 auto;
-    padding: clamp(3rem, 6vw, 4.5rem) 2rem;
+    padding: 1.5rem 2rem 2rem;
 }
 
 #contact-me h2 {
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
     color: white;
     font-size: clamp(2rem, 4vw, 2.75rem);
 }
@@ -622,6 +677,8 @@ footer .navbar {
         border-radius: 0;
     }
 
+    .profile-image { transform: none; }
+
     .education-panel {
         min-height: auto;
         padding: 2.5rem;
@@ -640,6 +697,7 @@ footer .navbar {
 }
 
 @media (max-width: 575.98px) {
+    :root { --site-brand-offset: 1.25rem; }
     .site-nav,
     .hero,
     .content-section {
