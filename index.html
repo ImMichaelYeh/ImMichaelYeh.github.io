@@ -64,11 +64,11 @@
                                     <b class="text-gold">Optum (UnitedHealth Group)</b>, Software Engineer
                                 </h3>
                                 <ul class="experience-list">
-                                    <li>Reduced AWS Cloud costs by $200K+ annually by eliminating redundant API calls and implementing caching across backend services.</li>
-                                    <li>Delivered mobile notifications to 1M+ members by designing a high-throughput multi-threaded messaging system.</li>
-                                    <li>Delivered an automated onboarding system capable of processing 10M+ new clients before peak enrollment season by building a high-throughput event-driven eligibility platform integrating legacy healthcare services.</li>
-                                    <li>Saved 40+ engineering hours weekly by building an internal support tool that allows operations teams to create test users, diagnose, and resolve issues without engineering intervention.</li>
-                                    <li>Remediated healthcare regulatory compliance risks by identifying critical security vulnerabilities and leading remediation across multiple backend services.</li>
+                                    <li>Reduced AWS costs by an estimated $200K+ annually by implementing caching for external API calls and AWS Secrets Manager access across backend services.</li>
+                                    <li>Selected as engineering SME for a cross-team migration, bringing source-system expertise to implement and validate an ETL workflow migrating years of eligibility, activity, and rewards data across thousands of plans and millions of members.</li>
+                                    <li>Implemented an AWS event-driven platform for large-scale member onboarding and eligibility processing, integrating data from multiple healthcare systems and applying complex rules to determine rewards eligibility.</li>
+                                    <li>Restored missing return values in Datadog traces by debugging a custom Rust tracing library and updating the OpenTelemetry collector and its configuration, improving backend troubleshooting.</li>
+                                    <li>Enabled automated test-user creation by implementing a dedicated SQS pipeline that triggers existing registration workflows while isolating test traffic from live events.</li>
                                 </ul>
                             </div>
                             <div class="col-md-2 experience-meta">
@@ -93,7 +93,7 @@
                             </div>
                             <div class="col-md-2 experience-meta">
                                 <p class="text-gold meta-date">2021</p>
-                                <p>San Diego, CA</p>
+                                <p>San Diego, CA (Remote)</p>
                             </div>
                         </div>
                     </article>
@@ -185,40 +185,6 @@
             <div class="row skills-row skills-row-first">
                 <div class="col-3">
                     <article class="card center skill-card">
-                        <img src="images/C.png" width="33%" class="mx-auto skill-image" alt="C">
-                        <div class="card-body">
-                            <h4 class="card-title text-center">C</h4>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-3">
-                    <article class="card center skill-card">
-                        <img src="images/Cpp.png" width="33%" class="mx-auto skill-image" alt="C++">
-                        <div class="card-body">
-                            <h4 class="card-title text-center">C++</h4>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-3">
-                    <article class="card center skill-card">
-                        <img src="images/CSharp.png" width="33%" class="mx-auto skill-image" alt="C#">
-                        <div class="card-body">
-                            <h4 class="card-title text-center">C#</h4>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-3">
-                    <article class="card center skill-card">
-                        <img src="images/Go.png" width="33%" class="mx-auto skill-image" alt="Go">
-                        <div class="card-body">
-                            <h4 class="card-title text-center">Go</h4>
-                        </div>
-                    </article>
-                </div>
-            </div>
-            <div class="row skills-row skills-row-spaced">
-                <div class="col-3">
-                    <article class="card center skill-card">
                         <img src="images/java.png" width="33%" class="mx-auto skill-image" alt="Java">
                         <div class="card-body">
                             <h4 class="card-title text-center">Java</h4>
@@ -243,9 +209,9 @@
                 </div>
                 <div class="col-3">
                     <article class="card center skill-card">
-                        <img src="images/TypeScript.png" width="33%" class="mx-auto skill-image" alt="TypeScript">
+                        <img src="images/Go.png" width="33%" class="mx-auto skill-image" alt="Go">
                         <div class="card-body">
-                            <h4 class="card-title text-center">TypeScript</h4>
+                            <h4 class="card-title text-center">Go</h4>
                         </div>
                     </article>
                 </div>
@@ -253,7 +219,7 @@
             <div class="skills-groups">
                 <article>
                     <h3>Cloud / Infrastructure</h3>
-                    <p>AWS Lambda, API Gateway, S3, SQS, Step Functions, CDK, Glue</p>
+                    <p>AWS Lambda, AppSync, S3, SQS, Step Functions, CDK, Glue</p>
                 </article>
                 <article>
                     <h3>Databases</h3>
