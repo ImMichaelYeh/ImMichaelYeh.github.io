@@ -4,14 +4,44 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>My Auto Codec Privacy Policy</title>
+  <script>
+    const theme = new URLSearchParams(location.search).get('theme');
+    if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
+  </script>
   <style>
-    body { background: #fff8f8; color: #241517; font: 16px/1.6 system-ui, sans-serif; margin: 0; }
+    :root {
+      color-scheme: light;
+      --background: #fff8f8;
+      --text: #241517;
+      --heading: #701b31;
+      --muted: #6c5559;
+      --link: #8d1f3d;
+    }
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --background: #1b1013;
+      --text: #fff0f2;
+      --heading: #f0a7b3;
+      --muted: #e4bec5;
+      --link: #f0a7b3;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        color-scheme: dark;
+        --background: #1b1013;
+        --text: #fff0f2;
+        --heading: #f0a7b3;
+        --muted: #e4bec5;
+        --link: #f0a7b3;
+      }
+    }
+    body { background: var(--background); color: var(--text); font: 16px/1.6 system-ui, sans-serif; margin: 0; }
     main { box-sizing: border-box; margin: 0 auto; max-width: 760px; padding: 48px 24px 64px; }
-    h1, h2 { color: #701b31; line-height: 1.2; }
+    h1, h2 { color: var(--heading); line-height: 1.2; }
     h1 { font-size: 2rem; margin: 0 0 8px; }
     h2 { font-size: 1.25rem; margin-top: 32px; }
-    .effective { color: #6c5559; margin-top: 0; }
-    a { color: #8d1f3d; }
+    .effective { color: var(--muted); margin-top: 0; }
+    a { color: var(--link); }
   </style>
 </head>
 <body>
